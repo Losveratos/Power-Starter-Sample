@@ -336,6 +336,8 @@ Das Bordbistro meldet jeden Monat eine eigene Datei – wie im echten Leben. Im 
 | `Steuersatz` | **Speisen im Bistro 7 %, Speisen im Restaurant 19 %, Getränke immer 19 %** (Stand 2025) |
 | `Anzahl Artikel`, `Umsatz netto`, `MwSt`, `Umsatz brutto` | Komma als Dezimalzeichen |
 
+⬇️ **Nur die 12 Dateien:** [Bordgastronomie-2025-12-Monate.zip](https://github.com/Losveratos/Power-Starter-Sample/raw/main/00-Downloads/Bordgastronomie-2025-12-Monate.zip)
+
 **Laden:**
 - **Offline (ZIP entpackt):** **Daten abrufen → Ordner** → Ordner `bordgastronomie_2025` → **Kombinieren und transformieren** →
   Beispieldatei *Erste Datei* → **OK**. Danach Typen mit Gebietsschema **Deutsch (Deutschland)** setzen.

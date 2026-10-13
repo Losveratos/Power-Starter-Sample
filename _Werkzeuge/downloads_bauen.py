@@ -8,6 +8,7 @@
   Fall-Weiterbildungs-Monitoring.zip                Anleitung als PDF + Daten + Skripte + Mockup
   Loesung-Weiterbildungs-Monitoring-PowerBI.zip     fertiges Power-BI-Projekt (PBIP)
   Fall-Bahn-Europa.zip                              Anleitung als PDF + Daten + Skripte
+  Bordgastronomie-2025-12-Monate.zip                nur die 12 Monatsdateien der Bordgastronomie
 
 PDFs werden aus den Markdown-Dateien des Repos gerendert (Chromium über Playwright),
 relative Links zeigen im PDF auf die Dateien auf GitHub. ZIPs haben feste Zeitstempel,
@@ -202,6 +203,9 @@ Details: LIESMICH-PowerBI.pdf
         *[(f"Daten/{f.relative_to(bahn / 'Daten').as_posix()}", f) for f in sorted((bahn / "Daten").rglob("*")) if f.is_file()],
         *[(f"Loesungen/{f.stem}.txt", f) for f in sorted((bahn / "Loesungen").rglob("*")) if f.is_file()],
     ])
+    bordgastro = bahn / "Daten/1-Rohdaten/bordgastronomie_2025"
+    write_zip("Bordgastronomie-2025-12-Monate.zip",
+              [(f"bordgastronomie_2025/{f.name}", f) for f in sorted(bordgastro.glob("*.csv"))])
 
 
 if __name__ == "__main__":
