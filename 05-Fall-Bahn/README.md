@@ -318,6 +318,50 @@ https://raw.githubusercontent.com/Losveratos/Power-Starter-24-25-September/main/
 
 ---
 
+## Extra · Bordgastronomie: 12 Monatsdateien kombinieren (Demo, 30 min)
+
+Das Bordbistro meldet jeden Monat eine eigene Datei – wie im echten Leben. Im Ordner
+[`Daten/1-Rohdaten/bordgastronomie_2025/`](Daten/1-Rohdaten/bordgastronomie_2025/) liegen **12 Dateien**
+(`bordgastronomie_2025-01.csv` … `-12.csv`) mit je einer Zeile pro **Fahrt × Bereich × Kategorie**.
+**Alle Werte sind simuliert** – Zugnummern und Crew-Kennungen sind ausgedacht, Personen kommen nicht vor.
+
+| Spalte | Inhalt |
+|---|---|
+| `Datum`, `Wochentag`, `Abfahrt` | Tag und Abfahrtszeit am Startbahnhof |
+| `Zugnummer`, `Linie`, `Von`, `Nach` | 5 Linien ab Köln Hbf: München, Berlin, Brüssel, Hamburg, Basel – je 3 Zugpaare am Tag |
+| `ICE-Typ`, `Baureihe` | ICE 3neo (BR 408), ICE 4 (BR 412), ICE 3M (BR 406), ICE 1 (BR 401) |
+| `Crew`, `Crew-Standort` | Bordgastro-Team (z. B. `BG-KOE-07`) und sein Standort |
+| `Bereich` | **Bistro** oder **Restaurant** – ein Restaurant haben nur ICE 1 und ICE 4 |
+| `Kategorie` | Getränke · Alkoholische Getränke · Snacks · Mahlzeiten (Snacks nur im Bistro) |
+| `Steuersatz` | **Speisen im Bistro 7 %, Speisen im Restaurant 19 %, Getränke immer 19 %** (Stand 2025) |
+| `Anzahl Artikel`, `Umsatz netto`, `MwSt`, `Umsatz brutto` | Komma als Dezimalzeichen |
+
+**Laden:**
+- **Offline (ZIP entpackt):** **Daten abrufen → Ordner** → Ordner `bordgastronomie_2025` → **Kombinieren und transformieren** →
+  Beispieldatei *Erste Datei* → **OK**. Danach Typen mit Gebietsschema **Deutsch (Deutschland)** setzen.
+- **Online:** fertiges Skript [`08_bordgastronomie_12_monate.pq`](Loesungen/PowerQuery/08_bordgastronomie_12_monate.pq) als leere Abfrage einfügen.
+
+> ✅ **Kontrollpunkt:** **62.376 Zeilen** · 10.752 Fahrten mit Umsatz (198 ohne – Bistro zu oder Zug ausgefallen) ·
+> Umsatz netto **14.311.110,25 €**, brutto **16.325.622,95 €** · Januar netto 1.055.703,46 € · stärkster Monat **August** 1.350.235,35 € ·
+> stärkste Linie **Köln – Berlin** 3.496.511,59 € · Bistro 11.076.048,91 € / Restaurant 3.235.061,34 € ·
+> 7 %: 5.871.654,82 € / 19 %: 8.439.455,43 € (netto).
+
+> 🆘 **Hängst du fest?**
+> - **Nur 5.000 Zeilen:** Du hast eine einzelne Datei statt des Ordners geladen.
+> - **Kopfzeile taucht 11-mal als Datenzeile auf:** Beim Kombinieren die Kopfzeile **in der Beispieldatei** höherstufen, nicht danach in der kombinierten Tabelle.
+> - **Umsatz × 100 oder Datum als Fehler:** Gebietsschema – Typ ändern **Mithilfe des Gebietsschemas… → Deutsch (Deutschland)**.
+> - **Restaurant fehlt bei München und Brüssel:** Kein Fehler – ICE 3neo und ICE 3M haben nur ein Bistro.
+
+> 📚 **Mehr dazu:** [Einsteiger-Guide · Power Query](https://datenwgknowledgekitchen.com/power_bi_einsteiger_guide_v4.html#pq) ·
+> Microsoft Learn: [Datentypen](https://learn.microsoft.com/de-de/power-query/data-types) ·
+> [Text/CSV](https://learn.microsoft.com/de-de/power-query/connectors/text-csv)
+
+**Ideen für Fragen:** Umsatz pro Fahrt je Linie und ICE-Typ · Alkoholanteil nach Abfahrtszeit und Wochentag ·
+Crew-Vergleich (Umsatz pro Fahrt) · Was bringt ein Restaurant? (ICE 4 vs. ICE 3neo) · Steuerlast 7 % vs. 19 % ·
+Sternschema: `dim_zug` (Zugnummer, Linie, ICE-Typ, Baureihe), `dim_crew`, Kalender.
+
+---
+
 ## Für Trainer:innen
 
 - **Warum dieser Fall:** Bahn-Leute kennen die Fragen und die Stolperfallen der Zahlen (Umsteigende doppelt,

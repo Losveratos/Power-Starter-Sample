@@ -98,5 +98,49 @@
       "Berlin",
       599695000
     ]
+  },
+  "bordgastronomie": {
+    "dateien": 12,
+    "zeilen": 62376,
+    "fahrten": 10752,
+    "ausgefallene_fahrten": 198,
+    "netto": 14311110.25,
+    "brutto": 16325622.95,
+    "netto_je_monat": {
+      "2025-01": 1055703.46,
+      "2025-02": 990269.81,
+      "2025-03": 1162805.76,
+      "2025-04": 1154709.26,
+      "2025-05": 1248077.49,
+      "2025-06": 1236286.43,
+      "2025-07": 1312902.06,
+      "2025-08": 1350235.35,
+      "2025-09": 1188781.31,
+      "2025-10": 1222713.22,
+      "2025-11": 1135778.51,
+      "2025-12": 1252847.59
+    },
+    "netto_je_linie": {
+      "Köln – Hannover – Berlin": 3496511.59,
+      "Köln – Mannheim – Basel": 3293393.7,
+      "Köln – Dortmund – Hamburg": 3206505.06,
+      "Köln – Frankfurt – München": 3082973.9,
+      "Köln – Aachen – Brüssel": 1231726.0
+    },
+    "netto_je_bereich": {
+      "Bistro": 11076048.91,
+      "Restaurant": 3235061.34
+    },
+    "netto_je_kategorie": {
+      "Mahlzeiten": 5827957.05,
+      "Getränke": 4837589.17,
+      "Snacks": 2053212.49,
+      "Alkoholische Getränke": 1592351.54
+    },
+    "netto_je_steuersatz": {
+      "19 %": 8439455.43,
+      "7 %": 5871654.82
+    },
+    "crews": 32
   }
 }
